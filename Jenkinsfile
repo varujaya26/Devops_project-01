@@ -27,7 +27,7 @@ pipeline {
         stage('PUSH TO HUB') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
